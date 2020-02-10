@@ -27,22 +27,24 @@ let makeContainer = text => {
   content;
 };
 
+ReactDOMRe.render(<Router />, makeContainer("Atomic Router"));
+
 // All 4 examples.
-ReactDOMRe.render(<Greeting />, makeContainer("Atomic Greeting"));
+// ReactDOMRe.render(<Greeting />, makeContainer("Atomic Greeting"));
 
-ReactDOMRe.render(
-  <BlinkingGreeting> {React.string("Hello!")} </BlinkingGreeting>,
-  makeContainer("Blinking Greeting"),
-);
+// ReactDOMRe.render(
+//   <BlinkingGreeting> {React.string("Hello!")} </BlinkingGreeting>,
+//   makeContainer("Blinking Greeting"),
+// );
 
-ReactDOMRe.render(
-  <ReducerFromReactJSDocs />,
-  makeContainer("Reducer From ReactJS Docs"),
-);
+// ReactDOMRe.render(
+//   <ReducerFromReactJSDocs />,
+//   makeContainer("Reducer From ReactJS Docs"),
+// );
 
-ReactDOMRe.render(
-  <FetchedDogPictures />,
-  makeContainer("Fetched Dog Pictures"),
-);
+// ReactDOMRe.render(
+//   <FetchedDogPictures />,
+//   makeContainer("Fetched Dog Pictures"),
+// );
 
-ReactDOMRe.render(<FetchRandomDog />, makeContainer("1 random Dog"));
+// ReactDOMRe.render(<FetchRandomDog />, makeContainer("1 random Dog"));
