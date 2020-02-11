@@ -3,11 +3,7 @@
 let goTo404 = _ => {
   ReasonReactRouter.push("/error")
 }
- 
-let goToAtomic = () => {
-  ReasonReactRouter.push("/atomic");
- 
-};
+
 let goToBlinkingGreeting = () => {
   ReasonReactRouter.push("/blinking-greeting");
 };
@@ -26,31 +22,32 @@ let goToGreetings = () => {
 let goToReducer = () => {
   ReasonReactRouter.push("/reducer");
 };
-let allComponent = () => {
-  ReasonReactRouter.push("/random");
-};
+
  
 [@react.component]
 let make = () => {
     let url = ReasonReactRouter.useUrl();
     let content = switch (url.path) {
-        |["atomic"] => <Greeting />
-        |["blinking-greeting"] =><BlinkingGreeting> {React.string("Hello!")} </BlinkingGreeting>
+        |["blinking-greeting"] =><BlinkingGreeting> {React.string("Hello !")} </BlinkingGreeting>
         |["fetched-dog"] => <FetchedDogPictures />
         |["random-dog"] => <FetchRandomDog />
         |["greetings"] => <Greeting />
         |["reducer"] => <ReducerFromReactJSDocs />
-        | _ => <div> {React.string("Erreur 404")}</div>
+        | _ =>  {React.string("This URL doesn't exist")}
   };
 <>
   <div>
-  <button onClick={_ => goToAtomic()}> {React.string("Atomic")} </button>
-  <button onClick={_ => goToBlinkingGreeting()}> {React.string("Blinking greetings")} </button>
-  <button onClick={_ => goToFetched()}> {React.string("Fetched dog")} </button>
-  <button onClick={_ => goToRandom()}> {React.string("Random dog")} </button>
-  <button onClick={_ => goToGreetings()}> {React.string("Greetings")} </button>
-  <button onClick={_ => goToReducer()}> {React.string("Reducer")} </button>
-  <button onClick={_ => ReasonReactRouter.push("/random")}> {React.string("All")} </button>
+  <div onClick={_ => goToBlinkingGreeting()}> {React.string("Blinking greetings")} </div>
+  <br/>
+  <div onClick={_ => goToFetched()}> {React.string("Fetched dog")} </div>
+  <br/>
+  <div onClick={_ => goToRandom()}> {React.string("Random dog")} </div>
+  <br/>
+  <div onClick={_ => goToGreetings()}> {React.string("Greetings")} </div>
+  <br/>
+  <div onClick={_ => goToReducer()}> {React.string("Reducer")} </div>
+  <br/>
   </div>
 {content}
 </>
+};
