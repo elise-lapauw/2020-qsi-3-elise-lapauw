@@ -48,6 +48,8 @@ let make = () => {
   <div onClick={_ => goToReducer()}> {React.string("Reducer")} </div>
   <br/>
   </div>
+  <br/>
+  <br/>
 {content}
 </>
 };
