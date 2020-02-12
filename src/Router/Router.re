@@ -23,6 +23,10 @@ let goToReducer = () => {
   ReasonReactRouter.push("/reducer");
 };
 
+let goToProfile = () => {
+  ReasonReactRouter.push("/profile");
+};
+
  
 [@react.component]
 let make = () => {
@@ -33,6 +37,7 @@ let make = () => {
         |["random-dog"] => <FetchRandomDog />
         |["greetings"] => <Greeting />
         |["reducer"] => <ReducerFromReactJSDocs />
+        /* |["profile"] => <Profile /> */
         | _ =>  {React.string("This URL doesn't exist")}
   };
 <>
@@ -47,6 +52,8 @@ let make = () => {
   <br/>
   <div onClick={_ => goToReducer()}> {React.string("Reducer")} </div>
   <br/>
+  /* <div onClick={_ => goToProfile()}> {React.string("Profile")} </div>
+  <br/> */
   </div>
   <br/>
   <br/>
